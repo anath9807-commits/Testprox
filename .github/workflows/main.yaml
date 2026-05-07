@@ -1,4 +1,4 @@
-name: Generate APK
+name: Build Android APK
 on: [push]
 
 permissions:
@@ -8,11 +8,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Website to APK
-        uses: Swisyn/website-to-apk-action@v1.1
+      - name: Build APK
+        uses: paka-dev/website-to-android-app-action@v1.1
         with:
-          websiteUrl: 'https://anath9807.github.io/Testprox/'
+          websiteUrl: 'https://anath9807-commits.github.io/Testprox/'
           appName: 'TEST PRO'
+          packageName: 'com.vinay.testpro'
